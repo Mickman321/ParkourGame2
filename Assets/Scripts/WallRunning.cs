@@ -140,6 +140,7 @@ public class WallRunning : MonoBehaviour
     private void StartWallRun()
     {
         pm.wallrunning = true;
+       // pm.gravity = -10f;
     }
 
     private void WallRunningMovement()

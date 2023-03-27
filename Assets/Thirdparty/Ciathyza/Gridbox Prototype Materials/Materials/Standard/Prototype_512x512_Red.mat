@@ -253,7 +253,7 @@ Material:
     - _IridescenceThickness: 1
     - _LightScalar: 1
     - _LinkDetailsWithBase: 1
-    - _LowIntensity: 1
+    - _LowIntensity: 0.5
     - _MaterialID: 1
     - _Metallic: 0
     - _MetallicRemapMax: 0
@@ -263,7 +263,7 @@ Material:
     - _NormalScale: 1
     - _OcclusionStrength: 1
     - _OpaqueCullMode: 2
-    - _OutlineSize: 10
+    - _OutlineSize: 15
     - _PPDLodThreshold: 5
     - _PPDMaxSamples: 15
     - _PPDMinSamples: 5
