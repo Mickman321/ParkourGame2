@@ -86,6 +86,20 @@ public class WallRunning : MonoBehaviour
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         CheckForWall();
         StateMachine();
+
+
+        if (isGrounded == true)
+        {
+            pm.velocity = new Vector3(0, -2, 0);
+            exitingWall = false;
+            /*if (exitingWall == true)
+            {
+                pm.velocity = new Vector3(0, 0, 0);
+                exitingWall = false;
+            }*/
+
+        }
+       
     }
 
     private void FixedUpdate()
@@ -115,7 +129,7 @@ public class WallRunning : MonoBehaviour
         downwardsRunning = Input.GetKey(downwardsRunKey);
 
         // State 1 - Wallrunning
-        if ((wallLeft || wallRight) && verticalInput > 0 && AboveGround())
+        if ((wallLeft || wallRight) && verticalInput > 0 && AboveGround() && !exitingWall)
         {
             if (!pm.wallrunning)
                 StartWallRun();
@@ -130,91 +144,8 @@ public class WallRunning : MonoBehaviour
                 exitWallTimer = exitWallTime;
             }
 
-            /* // wall jump
-             if (Input.GetButton("Jump")) 
-             {
-                 WallJump();
-             }
-             if (isGrounded == true)
-             {
-
-                 StopWallJump();
-             }*/
-            // State 1 - WallJumping
-            if (Input.GetButton("WallJump"))
-            {
-                if (!pm.wallrunning)
-                    WallJump();
-
-                // wallrun timer
-                if (wallJumpTimer > 0)
-                    wallJumpTimer -= Time.deltaTime;
-
-              /*  if (wallJumpTimer <= 0 && isGrounded = true)
-                {
-                    exitingWallJump = true;
-                    exitWallJumpTimer = exitWallJumpTime;
-                }*/
-
-                // wall jump
-                /* if 
-                 {
-
-                 }
-                 if (isGrounded == true)
-                 {
-
-                     StopWallJump();
-                 }*/
-
-
-                // State 2 - Exiting
-
-
-                // if (Input.GetButton("Jump") && isJumping == true) /* Den här koden ser till så att när spelaren trycker på space och inte håller ner space
-                //så blir det ett kortare hopp och den ser också till så att det inte funkar i luften.*/
-                /* {
-
-
-                     if (jumpTimeCounter > 0)
-                     {
-                         print("continue jump");
-                         pm.velocity = Vector3.up * jumpHeight;
-                         jumpTimeCounter -= Time.deltaTime;
-                     }
-                     else
-                     {
-                         print("nej jump");
-                         isJumping = false;
-                     }
-                 }
-                 else
-                 {
-                     isJumping = false;
-                 }*/
-
-
-
-
-            }
-            else if (exitingWallJump)
-            {
-                if (isGrounded = true)
-                    StopWallJump();
-
-                if (exitWallJumpTimer > 0)
-                    exitWallJumpTimer -= Time.deltaTime;
-
-                if (exitWallJumpTimer <= 0)
-                    exitingWallJump = false;
-            }
-
-            // State 3 - None
-            else
-            {
-                if (pm.wallrunning)
-                    StopWallJump();
-            }
+            // wall jump
+            if (Input.GetButton("Jump")) WallJump();
         }
 
         // State 2 - Exiting
@@ -229,14 +160,89 @@ public class WallRunning : MonoBehaviour
             if (exitWallTimer <= 0)
                 exitingWall = false;
         }
+
+        // State 3 - None
         else
         {
             if (pm.wallrunning)
                 StopWallRun();
         }
 
-            
-        
+        /*if (Input.GetButton("Jump"))
+        {
+            if (!pm.wallrunning)
+                WallJump();
+
+            // wallrun timer
+            if (wallJumpTimer > 0)
+                wallJumpTimer -= Time.deltaTime;
+
+            if (wallJumpTimer <= 0 && isGrounded == true)
+            {
+                exitingWallJump = true;
+                exitWallJumpTimer = exitWallJumpTime;
+            }
+
+            // wall jump
+            /* if 
+             {
+
+             }
+             if (isGrounded == true)
+             {
+
+                 StopWallJump();
+             }*/
+
+
+        // State 2 - Exiting
+
+
+        // if (Input.GetButton("Jump") && isJumping == true) /* Den här koden ser till så att när spelaren trycker på space och inte håller ner space
+        //så blir det ett kortare hopp och den ser också till så att det inte funkar i luften.*/
+        /* {
+
+
+             if (jumpTimeCounter > 0)
+             {
+                 print("continue jump");
+                 pm.velocity = Vector3.up * jumpHeight;
+                 jumpTimeCounter -= Time.deltaTime;
+             }
+             else
+             {
+                 print("nej jump");
+                 isJumping = false;
+             }
+         }
+         else
+         {
+             isJumping = false;
+         }*/
+
+
+
+
+        /* }
+         else if (exitingWallJump)
+         {
+             if (isGrounded == true)
+                 StopWallJump();
+
+             if (exitWallJumpTimer > 0)
+                 exitWallJumpTimer -= Time.deltaTime;
+
+             if (exitWallJumpTimer <= 0)
+                 exitingWallJump = false;
+         }
+
+         // State 3 - None
+         else
+         {
+             if (pm.wallrunning)
+                 StopWallJump();
+         }*/
+
     }
 
     private void StartWallRun()
@@ -244,16 +250,16 @@ public class WallRunning : MonoBehaviour
         pm.wallrunning = true;
         wallRunTimer = maxWallRunTime;
 
-        pm.gravity = 20f;
+        //pm.gravity = 20f;
 
     }
 
     private void WallRunningMovement()
     {
         // .useGravity = false; //stäng av gravity
-        pm.gravity = -2f;
+        pm.gravity = 0f;
         // cc.
-        pm.velocity = new Vector3(pm.velocity.x, -2f, pm.velocity.z);
+        pm.velocity = new Vector3(pm.velocity.x, 0f, pm.velocity.z);
 
         Vector3 wallNormal = wallRight ? rightWallhit.normal : leftWallhit.normal;
 
@@ -292,12 +298,13 @@ public class WallRunning : MonoBehaviour
         exitWallTimer = exitWallTime;
         pm.wallrunning = true;
         wallJumpTimer = maxWallJumpTime;
-
-        /*Vector3 wallNormal = wallRight ? rightWallhit.normal : leftWallhit.normal;
+        isJumping = true;
+        
+        Vector3 wallNormal = wallRight ? rightWallhit.normal : leftWallhit.normal;
 
         Vector3 forceToApply = transform.up * wallJumpUpForce + wallNormal * wallJumpSideForce;
 
-         reset y velocity and add force
+        /* reset y velocity and add force
         pm.velocity = new Vector3(pm.velocity.x, 0f, pm.velocity.z);
         rb.AddForce(forceToApply, ForceMode.Impulse);*/
 
@@ -308,7 +315,7 @@ public class WallRunning : MonoBehaviour
             print("Wall jump");
             //isJumping = true;
             //jumpTimeCounter = jumpTime;
-            pm.velocity = new Vector3(10, 10, 0);
+            pm.velocity = new Vector3(5, 20, 0);
 
 
 
@@ -330,9 +337,18 @@ public class WallRunning : MonoBehaviour
             print("Wall jump");
             //isJumping = true;
             //jumpTimeCounter = jumpTime;
-            pm.velocity = new Vector3(-10, 10, 0);
+            pm.velocity = new Vector3(-5, 20, 0);
 
+            /*if (Input.GetButton("Jump"))
+            {
+                WallJump();
+            }
+            if (isGrounded == true)
+            {
 
+                StopWallJump();
+            }
+            */
 
             /*if (jumpTimeCounter > 0)
             {
@@ -351,12 +367,12 @@ public class WallRunning : MonoBehaviour
 
 
     }
-    private void StopWallJump()
+    /*private void StopWallJump()
     {
         pm.wallrunning = false;
         pm.gravity = -35f;
         pm.velocity = new Vector3(0, 0, 0);
        print("nej Walljump");
        //isJumping = false;
-    }
+    }*/
 }
