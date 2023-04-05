@@ -23,6 +23,18 @@ public class NetworkController : MonoBehaviourPunCallbacks
         print("Connecting...");
     }
 
+    public override void OnConnectedToMaster()
+    {
+        print("Connected to server in" + PhotonNetwork.CloudRegion);
+        startButton.interactable = true;
+        PhotonNetwork.AutomaticallySyncScene = true;
+    }
+
+    public void SetUserName()
+    {
+        PhotonNetwork.LocalPlayer.NickName = nameField.text;
+    }
+
     // Update is called once per frame
     void Update()
     {
