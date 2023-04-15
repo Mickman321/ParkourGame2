@@ -22,7 +22,7 @@ public class LobbyController : MonoBehaviourPunCallbacks
         CreateRoom();
     }
 
-    void CreateRoom()
+    public void CreateRoom()
     {
         print("creating room");
 
