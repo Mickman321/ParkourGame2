@@ -257,9 +257,9 @@ public class WallRunning : MonoBehaviour
     private void WallRunningMovement()
     {
         // .useGravity = false; //stäng av gravity
-        pm.gravity = 0f;
+        pm.gravity = -2f;
         // cc.
-        pm.velocity = new Vector3(pm.velocity.x, 0f, pm.velocity.z);
+        pm.velocity = new Vector3(pm.velocity.x, -2f, pm.velocity.z);
 
         Vector3 wallNormal = wallRight ? rightWallhit.normal : leftWallhit.normal;
 
