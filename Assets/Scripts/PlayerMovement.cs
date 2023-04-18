@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Cinemachine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -58,6 +59,10 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         view = GetComponent<PhotonView>();
+        if (view.IsMine)
+        {
+            FindObjectOfType<CinemachineVirtualCamera>().Follow = gameObject.transform;
+        }
     }
 
     // Update is called once per frame

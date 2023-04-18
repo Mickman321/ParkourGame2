@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.45113397, g: 0.49973482, b: 0.56756777, a: 1}
+  m_IndirectSpecularColor: {r: 0.45113325, g: 0.49973226, b: 0.56755966, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1084,76 +1084,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &997146807 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1292358663258275344, guid: 6c0578720d6a0204a81e8ae5e7c82d83, type: 3}
-  m_PrefabInstance: {fileID: 1030237168}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &1030237168
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1292358663258275344, guid: 6c0578720d6a0204a81e8ae5e7c82d83, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1292358663258275344, guid: 6c0578720d6a0204a81e8ae5e7c82d83, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1292358663258275344, guid: 6c0578720d6a0204a81e8ae5e7c82d83, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.59
-      objectReference: {fileID: 0}
-    - target: {fileID: 1292358663258275344, guid: 6c0578720d6a0204a81e8ae5e7c82d83, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1292358663258275344, guid: 6c0578720d6a0204a81e8ae5e7c82d83, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1292358663258275344, guid: 6c0578720d6a0204a81e8ae5e7c82d83, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1292358663258275344, guid: 6c0578720d6a0204a81e8ae5e7c82d83, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1292358663258275344, guid: 6c0578720d6a0204a81e8ae5e7c82d83, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1292358663258275344, guid: 6c0578720d6a0204a81e8ae5e7c82d83, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1292358663258275344, guid: 6c0578720d6a0204a81e8ae5e7c82d83, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1292358663258275344, guid: 6c0578720d6a0204a81e8ae5e7c82d83, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1292358663258275345, guid: 6c0578720d6a0204a81e8ae5e7c82d83, type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 1700312958}
-    - target: {fileID: 1292358663258275351, guid: 6c0578720d6a0204a81e8ae5e7c82d83, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4895200832301620161, guid: 6c0578720d6a0204a81e8ae5e7c82d83, type: 3}
-      propertyPath: sceneViewId
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6c0578720d6a0204a81e8ae5e7c82d83, type: 3}
 --- !u!1 &1157889945
 GameObject:
   m_ObjectHideFlags: 0
@@ -1475,8 +1405,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 997146807}
-  m_Follow: {fileID: 997146807}
+  m_LookAt: {fileID: 0}
+  m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 5
@@ -2054,7 +1984,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069485087}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aec7eff643e1ccc4895da870102efdad, type: 3}
   m_Name: 
