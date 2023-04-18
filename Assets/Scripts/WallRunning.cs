@@ -145,7 +145,10 @@ public class WallRunning : MonoBehaviour
             }
 
             // wall jump
-            if (Input.GetButton("Jump")) WallJump();
+            if (Input.GetButton("Jump"))
+            {
+                WallJump();
+            }
         }
 
         // State 2 - Exiting
@@ -287,8 +290,74 @@ public class WallRunning : MonoBehaviour
 
     private void StopWallRun()
     {
+
         pm.wallrunning = false;
         pm.gravity = -35f;
+
+
+        /*if (pm.wallrunning = false)
+        {
+            Vector3 wallNormal = wallRight ? rightWallhit.normal : leftWallhit.normal;
+
+            exitingWall = true;
+           
+
+            if ((wallLeft) && verticalInput > 0 && AboveGround())
+            {
+                //  velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity); 
+
+                print("Wall End");
+                //isJumping = true;
+                //jumpTimeCounter = jumpTime;
+                pm.velocity = new Vector3(3, -35, 0);
+                pm.gravity = -35f;
+
+
+                /*if (jumpTimeCounter > 0)
+                {
+                    print("continue Walljump");
+
+                    jumpTimeCounter -= Time.deltaTime;
+                    print("nej jump");
+                    isJumping = false;
+                }*/
+
+        /* }
+
+         if ((wallRight) && verticalInput > 0 && AboveGround())
+         {
+             //  velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity); 
+
+             print("Wall End");
+             //isJumping = true;
+             //jumpTimeCounter = jumpTime;
+             pm.velocity = new Vector3(-3, 0, 0);
+             pm.gravity = -35f;
+             /*if (Input.GetButton("Jump"))
+             {
+                 WallJump();
+             }
+             if (isGrounded == true)
+             {
+
+                 StopWallJump();
+             }
+             */
+
+        /*if (jumpTimeCounter > 0)
+        {
+            print("continue Walljump");
+
+            jumpTimeCounter -= Time.deltaTime;
+            print("nej jump");
+            isJumping = false;
+        }*/
+
+        // }
+
+        //}
+
+
     }
 
     private void WallJump()
