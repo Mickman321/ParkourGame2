@@ -322,7 +322,7 @@ public class WallRunning : MonoBehaviour
                     isJumping = false;
                 }*/
 
-        /* }
+        /*    }
 
          if ((wallRight) && verticalInput > 0 && AboveGround())
          {
@@ -344,18 +344,18 @@ public class WallRunning : MonoBehaviour
              }
              */
 
-        /*if (jumpTimeCounter > 0)
-        {
+           /*if (jumpTimeCounter > 0)
+          {
             print("continue Walljump");
 
             jumpTimeCounter -= Time.deltaTime;
             print("nej jump");
             isJumping = false;
-        }*/
+          }*/
 
-        // }
+       //  }
 
-        //}
+       // }
 
 
     }
