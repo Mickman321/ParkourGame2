@@ -9,11 +9,18 @@ public class TeleportScript : MonoBehaviour
     private Transform latestCheckpoint; // The latest touched checkpoint
     CharacterController controller;
     PlayerMovement pm;
+    private Rigidbody rb;
 
     private void Start()
     {
         controller = GetComponent<CharacterController>();
         pm = GetComponent<PlayerMovement>();
+        rb = GetComponent<Rigidbody>();
+    }
+    private void Update()
+    {
+        controller.enabled = true;
+        pm.enabled = true;
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
@@ -22,9 +29,10 @@ public class TeleportScript : MonoBehaviour
         {
             if (latestCheckpoint != null)
             {
-                print("telport");
+                print("teleport");
                 controller.enabled = false;
                 pm.enabled = false;
+                
                 hit.transform.position = latestCheckpoint.position; // Teleport the player to the latest checkpoint
                 
             }
@@ -34,10 +42,11 @@ public class TeleportScript : MonoBehaviour
             print("check");
             latestCheckpoint = hit.transform; // Update the latest touched checkpoint
             
+            
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+   /* private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(teleportTag))
         {
@@ -50,5 +59,5 @@ public class TeleportScript : MonoBehaviour
         {
             latestCheckpoint = other.transform; // Update the latest touched checkpoint
         }
-    }
+    }*/
 }

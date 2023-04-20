@@ -106,6 +106,7 @@ public class WallRunning : MonoBehaviour
     {
         if (pm.wallrunning)
             WallRunningMovement();
+        
     }
 
     private void CheckForWall()
@@ -267,6 +268,13 @@ public class WallRunning : MonoBehaviour
         if ((orientation.forward - wallForward).magnitude > (orientation.forward - -wallForward).magnitude)
             wallForward = -wallForward;
 
+
+        if (Input.GetButton("Jump"))
+        {
+            WallJump();
+           
+        }
+       
         // forward force
         // rb.AddForce(wallForward * wallRunForce, ForceMode.Force);
 
@@ -283,10 +291,7 @@ public class WallRunning : MonoBehaviour
         //if (!(wallLeft && horizontalInput > 0) && !(wallRight && horizontalInput < 0))
         //  rb.AddForce(-wallNormal * 100, ForceMode.Force);
         // wall jump
-        if (Input.GetButton("Jump"))
-        {
-            WallJump();
-        }
+
     }
 
     private void StopWallRun()
@@ -296,22 +301,22 @@ public class WallRunning : MonoBehaviour
         pm.gravity = -35f;
 
 
-        /*if (pm.wallrunning = false)
-        {
+       // if (pm.wallrunning = false)
+      //  {
             Vector3 wallNormal = wallRight ? rightWallhit.normal : leftWallhit.normal;
 
             exitingWall = true;
            
 
-            if ((wallLeft) && verticalInput > 0 && AboveGround())
+          /*  if ((wallLeft) && AboveGround())
             {
                 //  velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity); 
 
                 print("Wall End");
                 //isJumping = true;
                 //jumpTimeCounter = jumpTime;
-                pm.velocity = new Vector3(3, -35, 0);
-                pm.gravity = -35f;
+                pm.velocity = new Vector3(3, -1, 0);
+               // pm.gravity = -35f;
 
 
                 /*if (jumpTimeCounter > 0)
@@ -323,17 +328,17 @@ public class WallRunning : MonoBehaviour
                     isJumping = false;
                 }*/
 
-        /*    }
+          //  }
 
-         if ((wallRight) && verticalInput > 0 && AboveGround())
+        /* if ((wallRight) && AboveGround())
          {
              //  velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity); 
 
              print("Wall End");
              //isJumping = true;
              //jumpTimeCounter = jumpTime;
-             pm.velocity = new Vector3(-3, 0, 0);
-             pm.gravity = -35f;
+             pm.velocity = new Vector3(-3, -1, 0);
+            // pm.gravity = -35f;
              /*if (Input.GetButton("Jump"))
              {
                  WallJump();
@@ -356,7 +361,7 @@ public class WallRunning : MonoBehaviour
 
        //  }
 
-       // }
+      //  }
 
 
     }

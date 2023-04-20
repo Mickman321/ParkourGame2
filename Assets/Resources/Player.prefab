@@ -45,11 +45,8 @@ GameObject:
   - component: {fileID: 1292358663258275346}
   - component: {fileID: 1292358663258275345}
   - component: {fileID: 1292358663258275358}
-  - component: {fileID: 1292358663258275359}
-  - component: {fileID: 1292358663258275353}
   - component: {fileID: 4895200832301620161}
   - component: {fileID: 8491606411367712220}
-  - component: {fileID: -5440670763651471608}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -132,7 +129,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1292358663258275351}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -232,64 +229,6 @@ MonoBehaviour:
   useGravity: 0
   gravityCounterForce: 0
   orientation: {fileID: 1292358663356438169}
---- !u!114 &1292358663258275359
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292358663258275351}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99a61e3b6a3014045bb37e46ee1d40f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  whatIsWall:
-    serializedVersion: 2
-    m_Bits: 8
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 8
-  wallRunForce: 600
-  wallClimbSpeed: 3
-  maxWallRunTime: 10
-  upwardsRunKey: 0
-  downwardsRunKey: 0
-  wallCheckDistance: 0.7
-  minJumpHeight: 2
-  orientation: {fileID: 1292358663356438169}
---- !u!114 &1292358663258275353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292358663258275351}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6408bd5d3a0d9643b31b9f1cc2a53fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  whatIsWall:
-    serializedVersion: 2
-    m_Bits: 8
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 8
-  wallRunForce: 200
-  wallJumpUpForce: 7
-  wallJumpSideForce: 12
-  wallClimbSpeed: 3
-  maxWallRunTime: 10
-  jumpKey: 32
-  upwardsRunKey: 0
-  downwardsRunKey: 0
-  wallCheckDistance: 1
-  minJumpHeight: 1
-  exitWallTime: 10
-  useGravity: 1
-  gravityCounterForce: 8.86
-  orientation: {fileID: 1292358663356438169}
 --- !u!114 &4895200832301620161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,20 +268,6 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 1
   m_UseLocal: 1
---- !u!114 &-5440670763651471608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292358663258275351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66ee4513330c30140afd42fb3d376d5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  teleportTag: Teleport
-  checkpointTag: Checkpoint
 --- !u!1 &1292358663356438168
 GameObject:
   m_ObjectHideFlags: 0
