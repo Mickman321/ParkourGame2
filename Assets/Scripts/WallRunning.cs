@@ -144,11 +144,7 @@ public class WallRunning : MonoBehaviour
                 exitWallTimer = exitWallTime;
             }
 
-            // wall jump
-            if (Input.GetButton("Jump"))
-            {
-                WallJump();
-            }
+            
         }
 
         // State 2 - Exiting
@@ -272,7 +268,7 @@ public class WallRunning : MonoBehaviour
             wallForward = -wallForward;
 
         // forward force
-       // rb.AddForce(wallForward * wallRunForce, ForceMode.Force);
+        // rb.AddForce(wallForward * wallRunForce, ForceMode.Force);
 
         // upwards/downwards force
         /* if (upwardsRunning)
@@ -285,7 +281,12 @@ public class WallRunning : MonoBehaviour
             ()*/
 
         //if (!(wallLeft && horizontalInput > 0) && !(wallRight && horizontalInput < 0))
-          //  rb.AddForce(-wallNormal * 100, ForceMode.Force);
+        //  rb.AddForce(-wallNormal * 100, ForceMode.Force);
+        // wall jump
+        if (Input.GetButton("Jump"))
+        {
+            WallJump();
+        }
     }
 
     private void StopWallRun()
@@ -360,7 +361,7 @@ public class WallRunning : MonoBehaviour
 
     }
 
-    private void WallJump()
+    public void WallJump()
     {
         // enter exiting wall state
         exitingWall = true;
