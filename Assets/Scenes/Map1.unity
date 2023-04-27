@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.32813495, g: 0.23480588, b: 0.41205958, a: 1}
+  m_IndirectSpecularColor: {r: 0.32672548, g: 0.2297698, b: 0.41023803, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1508,7 +1508,7 @@ BoxCollider:
   m_GameObject: {fileID: 389389696}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -3264,7 +3264,7 @@ BoxCollider:
   m_GameObject: {fileID: 889108423}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -3633,7 +3633,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1077377755}
   m_LocalRotation: {x: 0.14798187, y: 0, z: 0, w: 0.98899007}
-  m_LocalPosition: {x: 0, y: 5.106405, z: 22.693966}
+  m_LocalPosition: {x: 0, y: 73.72528, z: -201.46861}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4240,7 +4240,7 @@ BoxCollider:
   m_GameObject: {fileID: 1297199324}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -6346,7 +6346,7 @@ BoxCollider:
   m_GameObject: {fileID: 2043005970}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -6504,7 +6504,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2070897512}
   m_LocalRotation: {x: 0.14798187, y: 0, z: 0, w: 0.98899007}
-  m_LocalPosition: {x: 0, y: 5.106405, z: 22.693966}
+  m_LocalPosition: {x: 0, y: 73.72528, z: -201.46861}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1800914994}
