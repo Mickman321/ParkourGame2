@@ -166,10 +166,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 1292358663258275346}
   cam: {fileID: 8239316998225712179, guid: 404f92e99193a2946bd16d75b0536210, type: 3}
-  speed: 20
+  speed: 25
   walkSpeed: 0
   climbSpeed: 0
-  jumpHeight: 15
+  jumpHeight: 12
   turnSmoothTime: 0.1
   velocity: {x: 0, y: 0, z: 0}
   gravity: -35
