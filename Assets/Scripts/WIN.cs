@@ -25,28 +25,26 @@ public class WIN : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       /* if (OnTriggerEnter(Collider other))
-        {
-            if (GameIsPaused)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
-        }*/
+        
+            
+        
 
     } // den här koden är functioner som kollar vad som händer om spelet är pausat eller inte.
     private void OnTriggerEnter(Collider other)
     {
-        controller = other.gameObject.GetComponent<CharacterController>();
-        controller.enabled = false;
-        other.gameObject.transform.position = target.position;
-        controller.enabled = true;
-        pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
-        GameIsPaused = (true);
+       // if //(OnTriggerEnter(Collider other))
+       // {
+            if (GameIsPaused)
+            {
+
+                Pause();
+            }
+            else
+            {
+                Resume();
+            }
+      //  }
+        
     }
 
     public void Resume()
