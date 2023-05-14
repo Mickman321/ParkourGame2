@@ -184,6 +184,9 @@ MonoBehaviour:
   jumpTime: 0.3
   wallrunSpeed: 10
   wallrunning: 0
+  powerup: {fileID: 0}
+  SpeedUpTimeCounter: 0
+  SpeedUpTime: 0
   state: 0
 --- !u!114 &1292358663258275358
 MonoBehaviour:

@@ -43,6 +43,13 @@ public class PlayerMovement : MonoBehaviour
     public bool wallrunning;
 
 
+    public PowerupBase powerup;
+
+    [SerializeField]
+    private float SpeedUpTimeCounter;
+    private bool isSpeedUp;
+    public float SpeedUpTime;
+
     // det dem här variablerna gör är att, kolla gravitation och öka velocity, hur mycket distance du är från marken, om spelaren är på marken, att referera till character controller i unity, hur mycket fart spelaren har.
     PhotonView view;
 
@@ -70,6 +77,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (view.IsMine)
         {
+
+            if (Input.GetButtonDown("SpeedUp") == true) //om man klickar shift och powerup != null
+            {
+                powerup.Activate(this);
+            }
+
             isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
             //Debug.DrawRay(groundCheck.position, -Vector3.up * groundDistance);
 
@@ -179,6 +192,15 @@ public class PlayerMovement : MonoBehaviour
         {
             state = MovementState.wallrunning;
             speed = wallrunSpeed;
+        }
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.GetComponent<PowerupBase>() != null)
+        {
+            powerup = hit.gameObject.GetComponent<PowerupBase>();
+            powerup.gameObject.SetActive(false);
         }
     }
 
