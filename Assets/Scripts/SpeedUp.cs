@@ -13,6 +13,6 @@ public class SpeedUp : PowerupBase
     {
         player.speed *= 2;
         base.Activate(player); 
-    }
+    } // det här är en speedboost power up den ärver från powerupbase och sen lägger till unika funktioner till poweruppbase utan att röra powerupbase scripten.
 
 }

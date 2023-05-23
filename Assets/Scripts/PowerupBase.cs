@@ -9,4 +9,4 @@ public class PowerupBase : MonoBehaviour
         print("Power!");
         Destroy(gameObject);
     }
-}
+} // det här är bass koden för alla power ups. alla power ups gör detta.

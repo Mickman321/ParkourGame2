@@ -32,7 +32,7 @@ public class RoomController : MonoBehaviourPunCallbacks
         }
     }
 
-
+    // Den här koden håller ordning och reda på vilken scene alla spelare ska joina efter man kopplats till en server.
 
 
 

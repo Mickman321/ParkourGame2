@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using Photon.Pun;
 
 public class NetworkController : MonoBehaviourPunCallbacks
-{
+{ // den här kopplar spelarna till en server.
     [SerializeField]
     Button startButton;
     [SerializeField]

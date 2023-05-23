@@ -4,7 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 
 public class SpawnPlayers : MonoBehaviour
-{
+{ // Den här scripten bestämmer vart spelaren ska skapas i scenen.
 
     public GameObject playerPrefab;
 
@@ -22,7 +22,7 @@ public class SpawnPlayers : MonoBehaviour
     {
         Vector3 randomPosition = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), Random.Range(minZ, maxZ));
         PhotonNetwork.Instantiate(playerPrefab.name, randomPosition, Quaternion.identity);
-    }
+    } 
 
     // Update is called once per frame
     void Update()

@@ -5,7 +5,7 @@ using Photon.Pun;
 using Photon.Realtime;
 
 public class LobbyController : MonoBehaviourPunCallbacks
-{
+{ // Den här koden controllerar storleken på rummet  skapar och letar också efter ett rum/server alla spelare hamnar på.
 
     public int roomSize;
 

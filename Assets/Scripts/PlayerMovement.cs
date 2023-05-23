@@ -69,19 +69,25 @@ public class PlayerMovement : MonoBehaviour
         if (view.IsMine)
         {
             FindObjectOfType<CinemachineVirtualCamera>().Follow = gameObject.transform;
-        }
+        } // Här både ärver jag kod från cinemachine och gör så att kameran bara följer efter en spelare.
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (view.IsMine)
+        if (view.IsMine) // Den här koden view.IsMine gör så att denna info är den ända som kopieras och så att spelare 2 inte kan styra spelare 1.
         {
 
             if (Input.GetButtonDown("SpeedUp") == true) //om man klickar shift och powerup != null
             {
                 powerup.Activate(this);
-            }
+            } // den här startar powerupen när man trycker på knappen jag satt i inputmanager.
+
+
+           /* if (Input.GetButtonDown("Dash") == true) //om man klickar shift och powerup != null
+            {
+                powerup.Activate(this);
+            }*/
 
             isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
             //Debug.DrawRay(groundCheck.position, -Vector3.up * groundDistance);
